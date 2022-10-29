@@ -76,4 +76,5 @@ def get_data(url):
 
     print('Сбор данных завершен.')
 
-get_data('https://www.napartner.ru/')
+def main():
+    get_data('https://www.napartner.ru/')
