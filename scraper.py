@@ -41,6 +41,9 @@ def get_data(url):
         except Exception:
             project_logo = 'No project logo'
 
-        project_name = project_data.find('div', class_='center').find('div', class_='name').find('h1').text
+        try:
+            project_name = project_data.find('div', class_='center').find('div', class_='name').find('h1').text
+        except Exception:
+            project_name = 'No project name'
 
 get_data('https://www.napartner.ru/')
