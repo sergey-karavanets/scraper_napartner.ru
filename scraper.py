@@ -65,7 +65,12 @@ def get_data(url):
             }
         )
 
+        print(f'Осталось итераций: {iterator_count}')
+        iterator_count -= 1
+
     with open('data/project_data.json', 'a', encoding='utf-8') as file:
         json.dump(projects_data_list, file, indent=4, ensure_ascii=False)
+
+    print('Сбор данных завершен.')
 
 get_data('https://www.napartner.ru/')
