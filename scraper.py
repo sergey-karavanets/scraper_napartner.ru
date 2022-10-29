@@ -19,6 +19,9 @@ def get_data(url):
     soup = BeautifulSoup(src, 'lxml')
     startups = soup.find_all(class_='main_startup_view')
 
+    iterator_count = len(startups)
+    print(f'Всего итераций: {iterator_count}')
+
     project_urls = []
     for startup in startups:
         project_url = 'https://www.napartner.ru' + startup.find('div', class_='name').find('a').get('href')
