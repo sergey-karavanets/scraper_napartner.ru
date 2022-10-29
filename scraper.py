@@ -18,6 +18,9 @@ def get_data(url):
     soup = BeautifulSoup(src, 'lxml')
     startups = soup.find_all(class_='main_startup_view')
 
-
+    project_urls = []
+    for startup in startups:
+        project_url = 'https://www.napartner.ru' + startup.find('div', class_='name').find('a').get('href')
+        project_urls.append(project_url)
 
 get_data('https://www.napartner.ru/')
