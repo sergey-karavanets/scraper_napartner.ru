@@ -53,4 +53,13 @@ def get_data(url):
         except Exception:
             project_description = 'No project description'
 
+        projects_data_list.append(
+            {
+                'Имя проекта': project_name,
+                'Ссылка на проект': project_url,
+                'URL логотипа проекта': project_logo,
+                'Описание проекта': project_description
+            }
+        )
+
 get_data('https://www.napartner.ru/')
