@@ -15,4 +15,7 @@ def get_data(url):
     with open('project.html', encoding='utf-8') as file:
         src = file.read()
 
+    soup = BeautifulSoup(src, 'lxml')
+    startup = soup.find_all(class_='main_startup_view')
+
 get_data('https://www.napartner.ru/')
