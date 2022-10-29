@@ -33,6 +33,7 @@ def get_data(url):
         with open(f'data/{project_name}.html', encoding='utf-8') as file:
             src = file.read()
 
-
+        soup = BeautifulSoup(src, 'lxml')
+        project_data = soup.find('div', class_='startup_page')
 
 get_data('https://www.napartner.ru/')
