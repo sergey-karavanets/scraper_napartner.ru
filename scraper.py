@@ -5,6 +5,7 @@ import lxml
 import json
 import time
 
+
 def get_data(url):
     headers = {
         'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/106.0.0.0 Safari/537.36'
@@ -54,7 +55,12 @@ def get_data(url):
             project_name = 'No project name'
 
         try:
-            project_description = '\n'.join(filter(lambda x: x not in ('Твитнуть'), map(lambda x: x.strip(), project_data.find('div', class_='bottom').find('div', class_='text').get_text('|').split('|'))))
+            project_description = '\n'.join(filter(lambda x: x not in ('Твитнуть'), map(lambda x: x.strip(),
+                                                                                        project_data.find('div',
+                                                                                                          class_='bottom').find(
+                                                                                            'div',
+                                                                                            class_='text').get_text(
+                                                                                            '|').split('|'))))
         except Exception:
             project_description = 'No project description'
 
@@ -76,5 +82,10 @@ def get_data(url):
 
     print('Сбор данных завершен.')
 
+
 def main():
     get_data('https://www.napartner.ru/')
+
+
+if __name__ == '__main__':
+    main()
