@@ -36,7 +36,10 @@ def get_data(url):
         soup = BeautifulSoup(src, 'lxml')
         project_data = soup.find('div', class_='startup_page')
 
-        project_logo = 'https://www.napartner.ru' + project_data.find('div', class_='left').find('img').get('src')
+        try:
+            project_logo = 'https://www.napartner.ru' + project_data.find('div', class_='left').find('img').get('src')
+        except Exception:
+            project_logo = 'No project logo'
 
         project_name = project_data.find('div', class_='center').find('div', class_='name').find('h1').text
 
