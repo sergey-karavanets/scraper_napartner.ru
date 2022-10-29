@@ -8,3 +8,8 @@ def get_data(url):
     }
 
     req = requests.get(url, headers)
+
+    with open('project.html', 'w', encoding='utf-8') as file:
+        file.write(req.text)
+
+get_data('https://www.napartner.ru/')
