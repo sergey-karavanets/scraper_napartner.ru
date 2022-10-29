@@ -23,6 +23,7 @@ def get_data(url):
         project_url = 'https://www.napartner.ru' + startup.find('div', class_='name').find('a').get('href')
         project_urls.append(project_url)
 
+    projects_data_list = []
     for project_url in project_urls:
         req = requests.get(project_url, headers)
         project_name = (project_url.split('/')[-1])
