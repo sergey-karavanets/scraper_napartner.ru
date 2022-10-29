@@ -38,4 +38,6 @@ def get_data(url):
 
         project_logo = 'https://www.napartner.ru' + project_data.find('div', class_='left').find('img').get('src')
 
+        project_name = project_data.find('div', class_='center').find('div', class_='name').find('h1').text
+
 get_data('https://www.napartner.ru/')
