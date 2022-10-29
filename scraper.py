@@ -23,4 +23,12 @@ def get_data(url):
         project_url = 'https://www.napartner.ru' + startup.find('div', class_='name').find('a').get('href')
         project_urls.append(project_url)
 
+    for project_url in project_urls:
+        req = requests.get(project_url, headers)
+        project_name = (project_url.split('/')[-1])
+        print(req.text)
+
+        with open(f'data/{project_name}.html', 'w', encoding='utf-8') as file:
+            file.write(req.text)
+
 get_data('https://www.napartner.ru/')
