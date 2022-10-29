@@ -16,6 +16,8 @@ def get_data(url):
         src = file.read()
 
     soup = BeautifulSoup(src, 'lxml')
-    startup = soup.find_all(class_='main_startup_view')
+    startups = soup.find_all(class_='main_startup_view')
+
+
 
 get_data('https://www.napartner.ru/')
