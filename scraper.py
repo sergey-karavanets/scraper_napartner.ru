@@ -12,4 +12,7 @@ def get_data(url):
     with open('project.html', 'w', encoding='utf-8') as file:
         file.write(req.text)
 
+    with open('project.html', encoding='utf-8') as file:
+        src = file.read()
+
 get_data('https://www.napartner.ru/')
