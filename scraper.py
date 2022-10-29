@@ -1,7 +1,9 @@
+import random
 import requests
 from bs4 import BeautifulSoup
 import lxml
 import json
+import time
 
 def get_data(url):
     headers = {
@@ -67,6 +69,7 @@ def get_data(url):
 
         print(f'Осталось итераций: {iterator_count}')
         iterator_count -= 1
+        time.sleep(random.randrange(2, 4))
 
     with open('data/project_data.json', 'a', encoding='utf-8') as file:
         json.dump(projects_data_list, file, indent=4, ensure_ascii=False)
