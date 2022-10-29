@@ -26,7 +26,6 @@ def get_data(url):
     for project_url in project_urls:
         req = requests.get(project_url, headers)
         project_name = (project_url.split('/')[-1])
-        print(req.text)
 
         with open(f'data/{project_name}.html', 'w', encoding='utf-8') as file:
             file.write(req.text)
