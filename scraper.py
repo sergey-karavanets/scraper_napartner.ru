@@ -1,3 +1,4 @@
+import os
 import random
 import requests
 from bs4 import BeautifulSoup
@@ -10,6 +11,9 @@ def get_data(url):
     headers = {
         'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/106.0.0.0 Safari/537.36'
     }
+
+    if not os.path.exists("data"):
+        os.makedirs("data")
 
     req = requests.get(url, headers)
 
