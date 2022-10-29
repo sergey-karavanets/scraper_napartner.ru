@@ -62,4 +62,7 @@ def get_data(url):
             }
         )
 
+    with open('data/project_data.json', 'a', encoding='utf-8') as file:
+        json.dump(projects_data_list, file, indent=4, ensure_ascii=False)
+
 get_data('https://www.napartner.ru/')
