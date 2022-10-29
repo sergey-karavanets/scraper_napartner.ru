@@ -49,7 +49,6 @@ def get_data(url):
 
         try:
             project_description = '\n'.join(filter(lambda x: x not in ('Твитнуть'), map(lambda x: x.strip(), project_data.find('div', class_='bottom').find('div', class_='text').get_text('|').split('|'))))
-            print(project_description)
         except Exception:
             project_description = 'No project description'
 
